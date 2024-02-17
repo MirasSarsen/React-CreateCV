@@ -10,11 +10,11 @@ export const Title = styled.h1`
     padding: 20px;
     border-radius: 0px 0px 25px 25px;
     color: white;
-    font-size: 15px;
+    font-size: 35px;
     margin-top: -10px;
 
     a {
-    margin-top: 30px;
+    margin-top: 10px;
     font-size: 18px;
   }
 `

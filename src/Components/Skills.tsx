@@ -1,7 +1,6 @@
 import React from 'react';
-import { Title } from './style';
-import { FormContainer } from './style';
-import { FormItem } from './style'
+import { Title, FormContainer } from './CommonStyles/commonStyles';
+    
 import {
     Form,
     Select,
@@ -20,9 +19,9 @@ const Skills = () => {
                 layout="horizontal"
                 >
         <FormContainer>
-                  <FormItem>Навыки</FormItem>
+                  <Form.Item label="Навыки" style={{ marginLeft: -254}} />
                   
-                        <Select style={{ width: 300 }}>
+                        <Select style={{ width: 300, marginTop: -20 }}>
                             <Option value="React">React</Option>
                             <Option value="Angular">Angular</Option>
                             <Option value="View">View</Option>
