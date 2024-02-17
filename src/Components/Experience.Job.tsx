@@ -7,11 +7,12 @@ import {
     Button,
 } from 'antd'; 
 import type { DatePickerProps, GetProps } from 'antd';
-import { Title } from './style';
-import { FormContainer } from './style';
-import { FormItem } from './style';
+
+import { Title, FormContainer } from './CommonStyles/commonStyles';
 
 type RangePickerProps = GetProps<typeof DatePicker.RangePicker>;
+
+const { TextArea } = Input;
 
 const { RangePicker } = DatePicker;
 
@@ -27,21 +28,22 @@ const ExperienceJob: React.FC = () => (
       >
         <Title>Опыт работы</Title>
         <FormContainer>
-            <FormItem>Компания</FormItem>
-            <Input placeholder='Компания' />
+            <Form.Item label="Компания" style={{marginTop: -10, marginLeft: -236}}/>
+            <Input style={{ marginTop: -20 }} placeholder='Компания' />
 
-            <FormItem>Должность</FormItem>
-            <Input placeholder='Должность' />
+            <Form.Item label="Должность" style={{marginTop: 10, marginLeft: -226}}/>
+            <Input style={{marginTop: -20}} placeholder='Должность' />
 
-            <FormItem>Период работы</FormItem>
-        <Space direction="vertical" size={12}>
+            <Form.Item label="Период работы" style={{marginTop: 10, marginLeft: -194}} />
+        <Space style={{marginTop: -20}} direction="vertical" size={12}>
             <RangePicker
             format="YYYY-MM-DD"
             onOk={onOk}
             />
         </Space>
-            <FormItem>Описание</FormItem>
-            <Input style={{ height: 120, resize: 'none' }} />
+            <Form.Item label="Описание" style={{ marginTop: 10, marginLeft: -237 }} />
+            
+            <TextArea rows={5} />
             <Button type="primary" style={{ width: 1650, marginTop: 15 }}>Добавить ещё</Button>
         </FormContainer>
     </Form>

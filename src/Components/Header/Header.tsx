@@ -4,7 +4,7 @@ import { Title } from './style';
 const Header = () => {
   return (
       <div>
-      <Title><h1>Create CV</h1><a>by Miras Sarsen</a></Title>
+      <Title>Create CV<a>by Miras Sarsen</a></Title>
       </div>
   )
 }

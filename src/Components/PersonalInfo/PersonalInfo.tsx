@@ -5,22 +5,10 @@ import {
   Input,
   Upload,
 } from 'antd';
-import { Title } from './style';
-import { FormContainer } from './style';
-import { FormItem } from './style'
-import { InputDate } from './style'
+import { Title, FormContainer } from '../CommonStyles/commonStyles';
+import { BirthdayDate } from './style';
 
-const { RangePicker } = DatePicker;
-const { TextArea } = Input;
-
-const normFile = (e: any) => {
-  if (Array.isArray(e)) {
-    return e;
-  }
-  return e?.fileList;
-};
-
-const PiComponent: React.FC = () => { 
+const PersonalInfo: React.FC = () => { 
 
   return (
     <>
@@ -31,28 +19,22 @@ const PiComponent: React.FC = () => {
         className="formContainer"
       > 
         <Title>Персональная информация</Title>
-        <FormContainer>
-                  <FormItem>
-                    ФИО
-                  </FormItem>
-                  <Input placeholder="Иванов Иван Иванович" />
-
-                  <FormItem>
-                    Место жительства
-                  </FormItem>
-                  <Input placeholder="Город, улица, дом" />
-
-                  <FormItem>
-                    Номер телефона
-                  </FormItem>
-                  <Input placeholder="Введите номер телефона" />
-
-                  <FormItem>
-                    Дата рождения
-                  </FormItem>
-                  <InputDate>
-                    <DatePicker placeholder="Выберите дату рождения" />
-                  </InputDate>
+          <FormContainer>
+      
+                  <Form.Item>ФИО</Form.Item>
+                  <Input style={{marginTop: -10}} placeholder="Иванов Иван Иванович" />
+                    
+                  <Form.Item style={{marginTop: 10}}>Место жительства</Form.Item>
+                  <Input style={{marginTop: -10}} placeholder="Город, улица, дом" />
+                    
+                  <Form.Item style={{marginTop: 10}}>Номер телефона</Form.Item>
+                  <Input style={{marginTop: -10}} placeholder="Введите номер телефона" />
+          
+                  <Form.Item style={{marginTop: 10}}>Дата рождения</Form.Item>
+                  <BirthdayDate>
+                    <DatePicker style={{marginTop: -10}} placeholder="Выберите дату рождения" />
+                  </BirthdayDate>
+          
                     <Upload action="/upload.do" listType="picture-card">
                       <button style={{ border: 0, background: 'none' }} type="button">
                         <div style={{ marginTop: -10 }}>Выберите ваш аватар</div>
@@ -64,4 +46,4 @@ const PiComponent: React.FC = () => {
   );
 };
 
-export default PiComponent;
+export default PersonalInfo;

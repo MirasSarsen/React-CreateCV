@@ -13,7 +13,3 @@ export const FormContainer = styled.div`
     padding: 15px;
     border-radius: 15px;
 `
-
-export const FormItem = styled.p`
-    margin-top: 10px;
-`
